@@ -22,4 +22,4 @@ A connectino will be needed to setup.
 
 For on-premises data sources, one will need to install and setup Data Gateway: https://learn.microsoft.com/en-us/power-bi/connect-data/service-gateway-data-sources
 
-![Pipeline Image](docs/images/azure-poc-pipeline.jpg)
+![Pipeline Image](docs/images/azure-poc-preview.jpg)
