@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
+HostUrl=file:///c%3A/Users/DDIOTTE/OneDrive%20-%20Government%20of%20BC/Desktop/Azure/01%20-%20Create%20Delta%20Tables%20From%20Shortcut%20%28ADLSGen2%20or%20S3%29.ipynb
