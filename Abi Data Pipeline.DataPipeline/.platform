@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Abi Data Pipeline"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b989a4f0-dfb6-8419-4136-f0431ec4e634"
+  }
+}

@@ -1,0 +1,183 @@
+table ElectricVehicleData
+	lineageTag: 74ae1f0f-ea45-4c8d-a3f6-72f213431798
+	sourceLineageTag: [dbo].[ElectricVehicleData]
+
+	column VIN
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 21f4cc28-7290-48d1-931c-e0f11a4fac8c
+		sourceLineageTag: VIN
+		summarizeBy: none
+		sourceColumn: VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8a0cac82-793b-401a-a528-9823135f23a5
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 11105df1-76c8-4bb6-8a37-1ae150815f5e
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f900890c-e907-4acb-a64d-2dd873c56aed
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8b1815fe-7099-474b-b03a-73f1db4a4ed1
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModelYear
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 90c7d494-38f1-4a2e-937b-5ae7400bae7d
+		sourceLineageTag: ModelYear
+		summarizeBy: none
+		sourceColumn: ModelYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column Make
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f89935cc-9c3b-4fbe-b708-5993ed0fdaa8
+		sourceLineageTag: Make
+		summarizeBy: none
+		sourceColumn: Make
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b8bdd396-0acb-4525-bf59-af606dcf7e88
+		sourceLineageTag: Model
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column ElectricVehicleType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5f0f2ec9-49dd-44ee-9d96-fee0b5448440
+		sourceLineageTag: ElectricVehicleType
+		summarizeBy: none
+		sourceColumn: ElectricVehicleType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CleanAlternativeFuelVehicleEligibility
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 180fe9bd-6928-4629-b113-8496c2521c15
+		sourceLineageTag: CleanAlternativeFuelVehicleEligibility
+		summarizeBy: none
+		sourceColumn: CleanAlternativeFuelVehicleEligibility
+
+		annotation SummarizationSetBy = Automatic
+
+	column ElectricRange
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eab7c099-d5da-4f2e-be9c-c78c3b5b9e34
+		sourceLineageTag: ElectricRange
+		summarizeBy: none
+		sourceColumn: ElectricRange
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaseMSRP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dd606bc9-1a71-440e-8b07-9b388ca0ddae
+		sourceLineageTag: BaseMSRP
+		summarizeBy: none
+		sourceColumn: BaseMSRP
+
+		annotation SummarizationSetBy = Automatic
+
+	column LegislativeDistrict
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9c57704e-b94c-45cf-a07f-60f2ea906eca
+		sourceLineageTag: LegislativeDistrict
+		summarizeBy: none
+		sourceColumn: LegislativeDistrict
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOLVehicleID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f9acf7d3-5ca7-4d5f-8953-6e0647196495
+		sourceLineageTag: DOLVehicleID
+		summarizeBy: none
+		sourceColumn: DOLVehicleID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehicleLocation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 67e3df7e-3f32-4479-8cf3-612251ad3a44
+		sourceLineageTag: VehicleLocation
+		summarizeBy: none
+		sourceColumn: VehicleLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column ElectricUtility
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2cc6669e-8f17-4de1-ba0e-30031f7ce625
+		sourceLineageTag: ElectricUtility
+		summarizeBy: none
+		sourceColumn: ElectricUtility
+
+		annotation SummarizationSetBy = Automatic
+
+	column CensusTract
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8ba844cb-09eb-45b4-85ea-022f702acd88
+		sourceLineageTag: CensusTract
+		summarizeBy: none
+		sourceColumn: CensusTract
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ElectricVehicleData = entity
+		mode: directLake
+		source
+			entityName: ElectricVehicleData
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
