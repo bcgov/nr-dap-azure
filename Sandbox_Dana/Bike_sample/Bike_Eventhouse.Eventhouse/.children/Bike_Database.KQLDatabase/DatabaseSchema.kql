@@ -1,0 +1,9 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table Bikestream (BikepointID:string, Street:string, Neighbourhood:string, Latitude:real, Longitude:real, No_Bikes:int, No_Empty_Docks:int, EnqueuedTime:datetime) 
+.create-or-alter table Bikestream ingestion json mapping 'Bikestream_Mapping'
+```
+[{"Properties":{"Path":"$['BikepointID']"},"column":"BikepointID","datatype":""},{"Properties":{"Path":"$['Street']"},"column":"Street","datatype":""},{"Properties":{"Path":"$['Neighbourhood']"},"column":"Neighbourhood","datatype":""},{"Properties":{"Path":"$['Latitude']"},"column":"Latitude","datatype":""},{"Properties":{"Path":"$['Longitude']"},"column":"Longitude","datatype":""},{"Properties":{"Path":"$['No_Bikes']"},"column":"No_Bikes","datatype":""},{"Properties":{"Path":"$['No_Empty_Docks']"},"column":"No_Empty_Docks","datatype":""},{"Properties":{"Path":"$['x-opt-enqueued-time']"},"column":"EnqueuedTime","datatype":""}]
+```

@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "7f6058ae-e0e5-42b8-8fe7-a202a3485a10",
+        "clusterUri": "https://trd-mkjeg6zzjy6f8pe9gq.z2.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "fc4908d6-be5e-41c3-bf18-c5cf18631c6e",
+        "databaseItemName": "Bike_Database"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "0c1fb204-c4f8-4578-8947-00ae8104a976",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nBikestream\n| take 100\n\n// Use 'project' and 'take' to view a sample number of records in the table and check the data.\nBikestream\n| project Street, No_Bikes\n| take 10\n\nBikestream \n| project Street, [\"Number of Empty Docks\"] = No_Empty_Docks\n| take 10\n\n// Summarize data\nBikestream\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes)\n\n// Summarize and group\nBikestream\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes) by Neighbourhood\n| project Neighbourhood, [\"Total Number of Bikes\"]\n\n// Summarize and group in Unidentified (doesn't exist in this sample data)\nBikestream\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes) by Neighbourhood\n| project Neighbourhood = case(isempty(Neighbourhood) or isnull(Neighbourhood), \"Unidentified\", Neighbourhood), [\"Total Number of Bikes\"]\n\n// Summarize and sort\n// Sort\nBikestream\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes) by Neighbourhood\n| project Neighbourhood = case(isempty(Neighbourhood) or isnull(Neighbourhood), \"Unidentified\", Neighbourhood), [\"Total Number of Bikes\"]\n| sort by Neighbourhood asc\n\n// Order by\nBikestream\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes) by Neighbourhood\n| project Neighbourhood = case(isempty(Neighbourhood) or isnull(Neighbourhood), \"Unidentified\", Neighbourhood), [\"Total Number of Bikes\"]\n| order by Neighbourhood asc\n\n// Filter data\nBikestream\n| where Neighbourhood == \"Chelsea\"\n| summarize [\"Total Number of Bikes\"] = sum(No_Bikes) by Neighbourhood\n| project Neighbourhood = case(isempty(Neighbourhood) or isnull(Neighbourhood), \"Unidentified\", Neighbourhood), [\"Total Number of Bikes\"]\n| sort by Neighbourhood asc\n\n// Transact-SQL\nSELECT TOP 100 * from Bikestream\n\nSELECT TOP 10 Street, No_Bikes\nFROM Bikestream\n\nSELECT TOP 10 Street, No_Empty_Docks as [Number of Empty Docks]\nfrom Bikestream\n\n// Summarize data by using Transact-SQL\n\nSELECT sum(No_Bikes) AS [Total Number of Bikes]\nFROM Bikestream\n\nSELECT Neighbourhood, Sum(No_Bikes) AS [Total Number of Bikes]\nFROM Bikestream\nGROUP BY Neighbourhood\n\nSELECT CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n    END AS Neighbourhood,\n    SUM(No_Bikes) AS [Total Number of Bikes]\nFROM Bikestream\nGROUP BY CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n        END;\n\n// Sort\n\nSELECT CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n    END AS Neighbourhood,\n    SUM(No_Bikes) AS [Total Number of Bikes]\nFROM Bikestream\nGROUP BY CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n        END\nORDER BY Neighbourhood ASC;\n\n// Filter\n\nSELECT CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n    END AS Neighbourhood,\n    SUM(No_Bikes) AS [Total Number of Bikes]\nFROM Bikestream\nGROUP BY CASE\n        WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n        ELSE Neighbourhood\n    END\nHAVING Neighbourhood = 'Chelsea'\nORDER BY Neighbourhood ASC;\n\n// See how many records are in the table.\nBikestream\n| count\n\n// This query returns the number of ingestions per hour in the given table.\nBikestream\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n\n",
+        "title": "Tab",
+        "dataSourceId": "7f6058ae-e0e5-42b8-8fe7-a202a3485a10"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "tabs": [
+      {
+        "id": "bf5f24b8-be9c-4d5a-9431-e41b8319e1b3",
+        "title": "Tab",
+        "content": "//**************************************************************************************************************************************************************\n// The following KQL Queryset is created to Bike point database\n// All the data is readily available in 'Bikestream' table\n// You can run a query by placing the cursor anywhere on the query text and clicking the run button (or Shift + Enter).\n// KQL overview https://aka.ms/KQL_overview\n// Quick KQL reference guide can be found here https://aka.ms/kql-quick-reference\n//***********************************************************************************************************************************************************\n\n// Count number of rows\nBikestream\n| count\n \n// View a small sample of records\nBikestream\n| take 10\n \n// Count the data points by Neighbourhood\nBikestream\n| summarize count() by Neighbourhood\n| render piechart\n \n// How many bikes are present per street\nBikestream\n| summarize countBikes=sum(No_Bikes) by Street\n| order by countBikes\n| render columnchart\n \n// Which is the most popular bike point\nBikestream\n| summarize SumOfBikes=sum(No_Bikes) by BikepointID\n| top 1 by SumOfBikes desc\n \n// Which streets have the highest number of empty docks\nBikestream\n| summarize countEmptyDocks=sum(No_Empty_Docks) by Street\n| top 5 by countEmptyDocks\n \n// Available bike points\nBikestream\n| where EnqueuedTime > ago(1h)\n| summarize arg_max(EnqueuedTime, No_Empty_Docks) by BikepointID,Longitude, Latitude, ['available docks'] = strcat( No_Empty_Docks, ' @', BikepointID )\n| project Longitude, Latitude, ['available docks']\n| render scatterchart with (kind = map)\n \n// Look at the point on a specific street\nBikestream\n| where Street == \"Strand\"\n| distinct BikepointID\n \n// What are daily trends in bike point usage\nBikestream\n| summarize countBikes=sum(No_Bikes) by bin(EnqueuedTime, 1d)\n| render timechart\n\n",
+        "dataSourceId": "e6080ae3-f593-4897-98f3-0d00d1f356d1"
+      }
+    ],
+    "dataSources": [
+      {
+        "type": "Fabric",
+        "id": "e6080ae3-f593-4897-98f3-0d00d1f356d1",
+        "clusterUri": "",
+        "databaseItemId": "18631c6e-c5cf-bf18-41c3-be5efc4908d6",
+        "databaseItemName": "Bike_Database"
+      }
+    ]
+  }
+}

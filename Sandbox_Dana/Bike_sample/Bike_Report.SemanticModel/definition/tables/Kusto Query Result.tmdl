@@ -1,0 +1,84 @@
+table 'Kusto Query Result'
+	lineageTag: 3b83d9a3-3ed5-4c37-a6ec-177f92c15ed8
+
+	column BikepointID
+		dataType: string
+		lineageTag: 3e248e02-583f-497d-9077-b03a0bff51c2
+		summarizeBy: none
+		sourceColumn: BikepointID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Street
+		dataType: string
+		lineageTag: 3e2b069a-517a-4a8c-b410-9ce1d09f1e2e
+		summarizeBy: none
+		sourceColumn: Street
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neighbourhood
+		dataType: string
+		lineageTag: 6ba79a31-1321-47e4-a1e7-4a0bac3a36ef
+		summarizeBy: none
+		sourceColumn: Neighbourhood
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 8592550c-b724-47b7-a96b-0cd67f747e41
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: ee6bf635-3bc3-41d0-85db-cc22bccba0d5
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column No_Bikes
+		dataType: int64
+		formatString: 0
+		lineageTag: ced41b4c-77a3-4d6f-9b49-0574931699e0
+		summarizeBy: sum
+		sourceColumn: No_Bikes
+
+		annotation SummarizationSetBy = Automatic
+
+	column No_Empty_Docks
+		dataType: int64
+		formatString: 0
+		lineageTag: a8c6d907-c44a-4aa2-bdf4-fee0f2e631bb
+		summarizeBy: sum
+		sourceColumn: No_Empty_Docks
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnqueuedTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c4ebd2b9-ace5-4d47-9ac5-20a3f7b8afbb
+		summarizeBy: none
+		sourceColumn: EnqueuedTime
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Kusto Query Result' = m
+		mode: directQuery
+		source =
+				let
+				Source = AzureDataExplorer.Contents("https://trd-mkjeg6zzjy6f8pe9gq.z2.kusto.fabric.microsoft.com", "fc4908d6-be5e-41c3-bf18-c5cf18631c6e", "Bikestream", [])
+				in
+				Source
+
+	annotation PBI_ResultType = Table
+

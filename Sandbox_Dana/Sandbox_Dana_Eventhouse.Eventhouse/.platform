@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "Sandbox_Dana_Eventhouse",
+    "description": "Sandbox_Dana_Eventhouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d0ba0462-2006-805b-48c8-f86c2eda640d"
+  }
+}

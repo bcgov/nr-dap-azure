@@ -1,0 +1,651 @@
+{
+  "schema_version": "60",
+  "title": "Bike_RTDashboard",
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "10s"
+  },
+  "tiles": [
+    {
+      "id": "33624500-a632-4832-90b2-e3782f12bc1a",
+      "title": "Most occupied bike points",
+      "visualType": "table",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 12,
+        "y": 12,
+        "width": 9,
+        "height": 10
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0a50d11c-feea-4e27-96c6-6bd58518011f"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": false,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          {
+            "interaction": "column",
+            "property": "Neighbourhood",
+            "parameterId": "09adc106-0b3e-4600-b8cf-1f6211b6f1fd",
+            "disabled": false
+          },
+          {
+            "interaction": "column",
+            "property": "Street",
+            "parameterId": "ff893909-9c66-4a75-a5e9-60bb14a172bb",
+            "disabled": false
+          }
+        ],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [
+          {
+            "id": "41e6c332-ce63-47a2-b0fb-3b9a58663928",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "green",
+            "tag": "",
+            "icon": "arrowUp",
+            "ruleName": "change",
+            "visualType": "table"
+          },
+          {
+            "id": "14fa68c4-9b59-45a5-8167-7440e74e4c90",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": true,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": "<",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "red",
+            "tag": "",
+            "icon": "arrowDown",
+            "ruleName": "",
+            "visualType": "table"
+          }
+        ]
+      }
+    },
+    {
+      "id": "44aed475-6157-4089-9e5d-142fbd9502d3",
+      "title": "Available Docks",
+      "visualType": "timechart",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "f1b4bee7-66b2-47d0-be21-a735a3688411"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "ingestionTime",
+        "yColumns": [
+          "sum_emptyDocks",
+          "Available Docks"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        },
+        "dataPointsTooltip": {
+          "all": false,
+          "limit": 1
+        }
+      }
+    },
+    {
+      "id": "71376f35-4298-4537-b786-f3040edde7fb",
+      "title": "New tile",
+      "hideTitle": true,
+      "visualType": "map",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 0,
+        "y": 9,
+        "width": 12,
+        "height": 13
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "b811f8af-6884-47ee-b48e-d61837362d4c"
+      },
+      "visualOptions": {
+        "map__type": "bubble",
+        "map__latitudeColumn": "Latitude",
+        "map__longitudeColumn": "Longitude",
+        "map__labelColumn": "available docks",
+        "map__sizeColumn": null,
+        "map__sizeDisabled": false,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    },
+    {
+      "id": "166a0cc1-f606-4166-8f7a-7c3857c0158e",
+      "title": "Most available bike points",
+      "visualType": "table",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 12,
+        "y": 3,
+        "width": 9,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "af923daf-5740-4ce6-b97d-d0c0a2ce1b21"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": false,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          {
+            "interaction": "column",
+            "property": "Neighbourhood",
+            "parameterId": "09adc106-0b3e-4600-b8cf-1f6211b6f1fd",
+            "disabled": false
+          },
+          {
+            "interaction": "column",
+            "property": "Street",
+            "parameterId": "ff893909-9c66-4a75-a5e9-60bb14a172bb",
+            "disabled": false
+          }
+        ],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [
+          {
+            "id": "41e6c332-ce63-47a2-b0fb-3b9a58663928",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "green",
+            "tag": "",
+            "icon": "arrowUp",
+            "ruleName": "change",
+            "visualType": "table"
+          },
+          {
+            "id": "14fa68c4-9b59-45a5-8167-7440e74e4c90",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": true,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": "<",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "red",
+            "tag": "",
+            "icon": "arrowDown",
+            "ruleName": "",
+            "visualType": "table"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dfc171ea-1607-4ac1-a54a-167d1d8c5d81",
+      "title": "Bikes per street",
+      "visualType": "column",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 0,
+        "y": 22,
+        "width": 21,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0d5db854-e874-49fa-b55b-f43b9a710d45"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "Street",
+        "yColumns": [
+          "countBikes"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": true,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          {
+            "interaction": "column",
+            "property": "Street",
+            "parameterId": "ff893909-9c66-4a75-a5e9-60bb14a172bb",
+            "disabled": false
+          }
+        ],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        },
+        "dataPointsTooltip": {
+          "all": false,
+          "limit": 1
+        }
+      }
+    },
+    {
+      "id": "b4b48e44-7a90-433c-9f8e-aef56676cae6",
+      "title": "# of Events",
+      "visualType": "multistat",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 9,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "14b696a3-4655-4b03-a30d-a0793dcb1607"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "multiStat__displayOrientation": "horizontal",
+        "multiStat__labelColumn": null,
+        "multiStat__slot": {
+          "width": 3,
+          "height": 1
+        },
+        "colorRules": [
+          {
+            "id": "41e6c332-ce63-47a2-b0fb-3b9a58663928",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "green",
+            "tag": "",
+            "icon": "arrowUp",
+            "ruleName": "change",
+            "visualType": "multistat"
+          },
+          {
+            "id": "14fa68c4-9b59-45a5-8167-7440e74e4c90",
+            "ruleType": "colorByCondition",
+            "applyToColumn": "i",
+            "hideText": true,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": "<",
+                "column": "#Bikes change",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "light",
+            "color": "red",
+            "tag": "",
+            "icon": "arrowDown",
+            "ruleName": "",
+            "visualType": "multistat"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f4276e74-e8d0-4433-a998-7aaf61d4f2e9",
+      "title": "Available Docks per day",
+      "visualType": "line",
+      "pageId": "4146266f-14ac-49dc-a183-786f865a1415",
+      "layout": {
+        "x": 0,
+        "y": 31,
+        "width": 21,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0ffff5b9-16f6-4991-be9a-4c9d56e44497"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    }
+  ],
+  "baseQueries": [
+    {
+      "id": "9ba3001f-f727-4559-81bc-7639ef191e83",
+      "queryId": "be33615e-4c2d-459f-8e12-dd41c4b3f653",
+      "variableName": "FilterBikeStream"
+    }
+  ],
+  "parameters": [
+    {
+      "kind": "string",
+      "id": "09adc106-0b3e-4600-b8cf-1f6211b6f1fd",
+      "displayName": "Neighborhood",
+      "description": "",
+      "variableName": "InNeighborhood",
+      "selectionType": "array",
+      "includeAllOption": true,
+      "defaultValue": {
+        "kind": "all"
+      },
+      "dataSource": {
+        "kind": "query",
+        "columns": {
+          "value": "Neighbourhood"
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "63127c55-6793-4deb-a300-d4efca9beb8a"
+        }
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    },
+    {
+      "kind": "string",
+      "id": "ff893909-9c66-4a75-a5e9-60bb14a172bb",
+      "displayName": "Street",
+      "description": "",
+      "variableName": "InStreet",
+      "selectionType": "array",
+      "includeAllOption": true,
+      "defaultValue": {
+        "kind": "all"
+      },
+      "dataSource": {
+        "kind": "query",
+        "columns": {
+          "value": "Street"
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "78b9f4ca-d976-4cc6-836c-29a705728c1f"
+        }
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    },
+    {
+      "kind": "duration",
+      "id": "29408947-ebe5-47d0-a7fe-1629c5266740",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "startTime",
+      "endVariableName": "endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "18631c6e-c5cf-bf18-41c3-be5efc4908d6",
+      "name": "Bicycles",
+      "id": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "4146266f-14ac-49dc-a183-786f865a1415"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\nFilterBikeStream\n| where ingestionTime > ago(1h)\n| summarize arg_max(ingestionTime, *), arg_min(ingestionTime, No_Empty_Docks, No_Bikes) by BikepointID\n| sort by fill_rate\n| top 10 by fill_rate\n| project BikepointID, Neighbourhood, Street, No_Bikes, No_Empty_Docks, ['#Bikes change'] = No_Bikes - No_Bikes1, ['i'] = ''\n\n// | partition hint.strategy=native by BikepointID (\n//     top 2 by ingestionTime\n//     | sort by ingestionTime asc \n//     | extend CountChange = prev(No_Bikes) - No_Bikes, EmptyCountChange = prev(No_Empty_Docks) - No_Empty_Docks\n// )\n\n// \n\n\n// | summarize arg_max(ingestionTime, *) by BikepointID\n// | sort by Neighbourhood, Street",
+      "id": "0a50d11c-feea-4e27-96c6-6bd58518011f",
+      "usedVariables": [
+        "FilterBikeStream"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where isempty(['InNeighborhood']) or <column name> in (['InNeighborhood']) // Multiple selection filtering\n// | where isempty(['InStreet']) or <column name> in (['InStreet']) // Multiple selection filtering\n// | take 100\nlet minimumTime = toscalar(FilterBikeStream | summarize min(ingestionTime));\nlet from=max_of(startTime, minimumTime);\nFilterBikeStream\n| make-series emptyDocks=max(No_Empty_Docks)  default=int(null)\n    on ingestionTime from from to now() step max_of((now() - from)/100, 2m) by BikepointID\n| extend emptyDocks = series_fill_linear(emptyDocks)\n| mvexpand emptyDocks, ingestionTime\n| summarize ['Available Docks'] = sum(toint(emptyDocks)) by todatetime(ingestionTime)\n\n",
+      "id": "f1b4bee7-66b2-47d0-be21-a735a3688411",
+      "usedVariables": [
+        "FilterBikeStream",
+        "startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['startTime'] .. ['endTime']) // Time range filtering\n// | where isempty(['InNeighborhood']) or <column name> in (['InNeighborhood']) // Multiple selection filtering\n// | where isempty(['InStreet']) or <column name> in (['InStreet']) // Multiple selection filtering\n// | take 100\nFilterBikeStream\n| where ingestionTime > ago(1h)\n| summarize arg_max(ingestionTime, No_Empty_Docks) by BikepointID, Latitude,Longitude, ['available docks'] = strcat( No_Empty_Docks, ' @', BikepointID )",
+      "id": "b811f8af-6884-47ee-b48e-d61837362d4c",
+      "usedVariables": [
+        "FilterBikeStream"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\nFilterBikeStream\n| where ingestionTime > ago(1h)\n| summarize arg_max(ingestionTime, *), arg_min(ingestionTime, No_Empty_Docks, No_Bikes) by BikepointID\n| sort by fill_rate desc\n| top 10 by 100 -fill_rate\n| project BikepointID, Neighbourhood, Street, No_Bikes, No_Empty_Docks, ['#Bikes change'] = No_Bikes - No_Bikes1, ['i'] = ''\n\n// | partition hint.strategy=native by BikepointID (\n//     top 2 by ingestionTime\n//     | sort by ingestionTime asc \n//     | extend CountChange = prev(No_Bikes) - No_Bikes, EmptyCountChange = prev(No_Empty_Docks) - No_Empty_Docks\n// )\n\n// \n\n\n// | summarize arg_max(ingestionTime, *) by BikepointID\n// | sort by Neighbourhood, Street",
+      "id": "af923daf-5740-4ce6-b97d-d0c0a2ce1b21",
+      "usedVariables": [
+        "FilterBikeStream"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where isempty(['InNeighborhood']) or <column name> in (['InNeighborhood']) // Multiple selection filtering\n// | where isempty(['InStreet']) or <column name> in (['InStreet']) // Multiple selection filtering\n// | take 100\nlet minimumTime = toscalar(FilterBikeStream | summarize min(ingestionTime));\nlet from=max_of(startTime, minimumTime);\nFilterBikeStream\n| summarize countBikes=sum(No_Bikes) by Street\n| render columnchart\n",
+      "id": "0d5db854-e874-49fa-b55b-f43b9a710d45",
+      "usedVariables": [
+        "FilterBikeStream",
+        "startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\nFilterBikeStream\n| where ingestionTime > ago(1h)\n| count | extend Label = \"Last hour\", Order = 2\n| union (\n    FilterBikeStream\n    | where ingestionTime > ago(1m)\n    | count | extend Label = \"Last minute\", Order = 3\n)| union (\n    FilterBikeStream\n    | count | extend Label = \"Total\", Order = 1\n)\n| sort by Order asc ",
+      "id": "14b696a3-4655-4b03-a30d-a0793dcb1607",
+      "usedVariables": [
+        "FilterBikeStream"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "let FilterBikeStream = () {\n    Bikestream\n    | where isempty(['InNeighborhood']) or Neighbourhood in (['InNeighborhood'])\n    | where isempty(['InStreet']) or Street in (['InStreet'])\n    | extend ingestionTime = ingestion_time()\n    | extend fill_rate = toreal(No_Bikes) / (No_Bikes + No_Empty_Docks)\n};\nlet minimumTime = toscalar(FilterBikeStream | summarize min(ingestionTime));\nlet from=max_of(startTime, minimumTime);\nFilterBikeStream\n| make-series emptyDocks=max(No_Empty_Docks)  default=int(null)\n    on ingestionTime from from to now() step max_of((now() - from)/100, 1d) by BikepointID\n| extend emptyDocks = series_fill_linear(emptyDocks)\n| mvexpand emptyDocks, ingestionTime\n| summarize ['Available Docks'] = sum(toint(emptyDocks)) by todatetime(ingestionTime)",
+      "id": "0ffff5b9-16f6-4991-be9a-4c9d56e44497",
+      "usedVariables": [
+        "InNeighborhood",
+        "InStreet",
+        "startTime"
+      ]
+    },
+    {
+      "id": "be33615e-4c2d-459f-8e12-dd41c4b3f653",
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\nBikestream\n| where isempty(['InNeighborhood']) or Neighbourhood in (['InNeighborhood']) // Multiple selection filtering\n| where isempty(['InStreet']) or Street in (['InStreet']) // Multiple selection filtering\n| extend ingestionTime = ingestion_time()\n| extend fill_rate = toreal(No_Bikes) / (No_Bikes + No_Empty_Docks)",
+      "usedVariables": [
+        "InNeighborhood",
+        "InStreet"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | take 100\nBikestream\n| distinct Neighbourhood",
+      "id": "63127c55-6793-4deb-a300-d4efca9beb8a",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a8b7dbb9-fe5e-4193-958b-e46ff81935ec"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where isempty(['InNeighborhood']) or <column name> in (['InNeighborhood']) // Multiple selection filtering\n// | take 100\n\nBikestream\n| where isempty(['InNeighborhood']) or Neighbourhood  in (['InNeighborhood']) // Multiple selection filtering\n| distinct Street",
+      "id": "78b9f4ca-d976-4cc6-836c-29a705728c1f",
+      "usedVariables": [
+        "InNeighborhood"
+      ]
+    }
+  ]
+}

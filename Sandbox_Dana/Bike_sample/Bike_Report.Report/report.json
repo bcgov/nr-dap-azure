@@ -1,0 +1,87 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.57\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"219L\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.6}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"58D\"}}}}}]},\"type\":1}",
+      "displayName": "Bikes",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "2a8b1f50b4c75195afe6",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0ff363d407288cd3c3a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1117.9112271540469,\"y\":94.62140992167102,\"z\":2000,\"width\":162.2976501305483,\"height\":625.3785900783289,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Kusto Query Result.Street\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Kusto Query Result\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Street\"},\"Name\":\"Kusto Query Result.Street\",\"NativeReferenceName\":\"Street\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 625.38,
+          "width": 162.30,
+          "x": 1117.91,
+          "y": 94.62,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"45223267c20370c01b3e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":94.62140992167102,\"z\":4000,\"width\":524.4908616187989,\"height\":278.8511749347258,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Kusto Query Result.Neighbourhood\",\"active\":true},{\"queryRef\":\"Kusto Query Result.Street\"},{\"queryRef\":\"Kusto Query Result.BikepointID\"}],\"Values\":[{\"queryRef\":\"Sum(Kusto Query Result.No_Bikes)\"},{\"queryRef\":\"Sum(Kusto Query Result.No_Empty_Docks)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Kusto Query Result\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"BikepointID\"},\"Name\":\"Kusto Query Result.BikepointID\",\"NativeReferenceName\":\"BikepointID\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"No_Bikes\"}},\"Function\":0},\"Name\":\"Sum(Kusto Query Result.No_Bikes)\",\"NativeReferenceName\":\"Bikes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"No_Empty_Docks\"}},\"Function\":0},\"Name\":\"Sum(Kusto Query Result.No_Empty_Docks)\",\"NativeReferenceName\":\"Empty Docks\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Street\"},\"Name\":\"Kusto Query Result.Street\",\"NativeReferenceName\":\"Street\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Neighbourhood\"},\"Name\":\"Kusto Query Result.Neighbourhood\",\"NativeReferenceName\":\"Neighbourhood\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Neighbourhood\"}}}]},\"columnProperties\":{\"Sum(Kusto Query Result.No_Bikes)\":{\"displayName\":\"Bikes\"},\"Sum(Kusto Query Result.No_Empty_Docks)\":{\"displayName\":\"Empty Docks\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"189.2210823811272D\"}}}},\"selector\":{\"metadata\":\"Kusto Query Result.Neighbourhood\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"162.88374845412238D\"}}}},\"selector\":{\"metadata\":\"Sum(Kusto Query Result.No_Bikes)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"149.62803307103715D\"}}}},\"selector\":{\"metadata\":\"Sum(Kusto Query Result.No_Empty_Docks)\"}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 278.85,
+          "width": 524.49,
+          "x": 0.00,
+          "y": 94.62,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"4552ac1554cd011b97d1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":956.2402088772845,\"y\":94.62140992167102,\"z\":1000,\"width\":161.6710182767624,\"height\":625.3785900783289,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Kusto Query Result.Neighbourhood\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Kusto Query Result\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Neighbourhood\"},\"Name\":\"Kusto Query Result.Neighbourhood\",\"NativeReferenceName\":\"Neighbourhood\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 625.38,
+          "width": 161.67,
+          "x": 956.24,
+          "y": 94.62,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"503c3bc2a9b46623adec\",\"layouts\":[{\"id\":0,\"position\":{\"x\":530.7571801566579,\"y\":94.62140992167102,\"z\":3000,\"width\":421.0966057441253,\"height\":625.3785900783289,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(Kusto Query Result.Longitude)\"}],\"Y\":[{\"queryRef\":\"Sum(Kusto Query Result.Latitude)\"}],\"Size\":[{\"queryRef\":\"Sum(Kusto Query Result.No_Bikes)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Kusto Query Result\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Longitude\"},\"Name\":\"Sum(Kusto Query Result.Longitude)\",\"NativeReferenceName\":\"Longitude\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Latitude\"},\"Name\":\"Sum(Kusto Query Result.Latitude)\",\"NativeReferenceName\":\"Latitude\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"No_Bikes\"}},\"Function\":0},\"Name\":\"Sum(Kusto Query Result.No_Bikes)\",\"NativeReferenceName\":\"Bikes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Longitude\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Kusto Query Result.No_Bikes)\":{\"displayName\":\"Bikes\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Available Bikes'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 625.38,
+          "width": 421.10,
+          "x": 530.76,
+          "y": 94.62,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7dbb8412186e63026b4a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":380.36553524804174,\"z\":5000,\"width\":524.4908616187989,\"height\":339.6344647519582,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Kusto Query Result.Street\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Kusto Query Result.BikepointID)\"},{\"queryRef\":\"Sum(Kusto Query Result.No_Empty_Docks)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Kusto Query Result\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Street\"},\"Name\":\"Kusto Query Result.Street\",\"NativeReferenceName\":\"Street\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"No_Empty_Docks\"}},\"Function\":0},\"Name\":\"Sum(Kusto Query Result.No_Empty_Docks)\",\"NativeReferenceName\":\"Empty Docks\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"BikepointID\"}},\"Function\":5},\"Name\":\"CountNonNull(Kusto Query Result.BikepointID)\",\"NativeReferenceName\":\"Bikes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"BikepointID\"}},\"Function\":5}}}]},\"columnProperties\":{\"Sum(Kusto Query Result.No_Empty_Docks)\":{\"displayName\":\"Empty Docks\"},\"CountNonNull(Kusto Query Result.BikepointID)\":{\"displayName\":\"Bikes\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 339.63,
+          "width": 524.49,
+          "x": 0.00,
+          "y": 380.37,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f92bb94314c5fb3bef64\",\"layouts\":[{\"id\":0,\"position\":{\"x\":469.34725848563966,\"y\":16.29242819843342,\"z\":0,\"width\":326.4751958224543,\"height\":60.15665796344647,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bikes Inventory\",\"textStyle\":{\"fontSize\":\"28pt\",\"color\":\"#000000\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading3'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 60.16,
+          "width": 326.48,
+          "x": 469.35,
+          "y": 16.29,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
