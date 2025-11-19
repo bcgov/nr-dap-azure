@@ -1,0 +1,362 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "PostgreSqlTable",
+      "connectionSettings": {
+        "type": "PostgreSql",
+        "externalReferences": {
+          "connection": "7810c35f-3f35-46fa-a52e-d322c2656106"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "d69028a7-db82-8ad2-4367-cf115fc7437d",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "1b4b17e1-389d-4af0-a53d-45a272dd7abb",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "fabric_ingestion",
+            "table": "canadian_provinces"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "id",
+                "type": "Int32",
+                "physicalType": "integer"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "fabric_ingestion_canadian_provinces"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "name",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "name",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "type",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "type",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "capital",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "capital",
+                "physicalType": "string"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "58deea3c-0ea3-4f8b-aa5e-c722059609b2",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "fabric_ingestion",
+            "table": "customers"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "customer_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "fabric_ingestion_customers"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "customer_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "customer_id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "name",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "name",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "province",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "province",
+                "physicalType": "string"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ce7c558a-3998-40fe-9424-0abafce1e979",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "fabric_ingestion",
+            "table": "products"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "product_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "fabric_ingestion_products"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "product_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "product_id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "name",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "name",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "category",
+                "type": "String",
+                "physicalType": "character varying"
+              },
+              "destination": {
+                "name": "category",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "price",
+                "type": "Decimal",
+                "physicalType": "numeric"
+              },
+              "destination": {
+                "name": "price",
+                "physicalType": "decimal"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "721df09d-816c-4450-b27b-a365a89ddcf4",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "fabric_ingestion",
+            "table": "sales"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "sale_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "fabric_ingestion_sales"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "sale_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "sale_id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "customer_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "customer_id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "product_id",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "product_id",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "quantity",
+                "type": "Int32",
+                "physicalType": "integer"
+              },
+              "destination": {
+                "name": "quantity",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "sale_date",
+                "type": "DateTime",
+                "physicalType": "date"
+              },
+              "destination": {
+                "name": "sale_date",
+                "physicalType": "timestamp"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

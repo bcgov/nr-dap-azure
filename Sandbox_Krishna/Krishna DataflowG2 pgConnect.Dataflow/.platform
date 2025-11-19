@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Krishna DataflowG2 pgConnect"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9b8df6a7-a3fd-8bfc-4033-f41242d4c841"
+  }
+}
