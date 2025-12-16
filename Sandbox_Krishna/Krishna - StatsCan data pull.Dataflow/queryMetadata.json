@@ -1,9 +1,0 @@
-{
-  "formatVersion": "202502",
-  "computeEngineSettings": {},
-  "name": "StatsCan data pull",
-  "queryGroups": [],
-  "documentLocale": "en-US",
-  "queriesMetadata": {},
-  "connections": []
-}
