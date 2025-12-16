@@ -1,0 +1,27 @@
+{
+  "name": "pl_postgresql_to_lakehouse_bronze",
+  "type": "Copy",
+  "properties": {
+    "source": {
+      "type": "PostgreSql",
+      "connection": "lc_postgres_sales",
+      "table": "public.customers",
+      "incrementalColumn": "updated_at"
+    },
+    "sink": {
+      "type": "Lakehouse",
+      "connection": "lh_sales_core",
+      "schema": "erp_replication",
+      "table": "customers_raw",
+      "format": "delta",
+      "writeMode": "append"
+    },
+    "translator": {
+      "type": "TabularTranslator",
+      "columnMappings": {
+        "id": "id", "name": "name", "age": "age",
+        "country": "country", "email": "email", "signup_date": "signup_date"
+      }
+    }
+  }
+}

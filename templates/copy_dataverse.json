@@ -1,0 +1,19 @@
+{
+  "name": "pl_dataverse_to_lakehouse_bronze",
+  "type": "Copy",
+  "properties": {
+    "source": {
+      "type": "Dataverse",
+      "connection": "lc_dataverse_crm",
+      "table": "accounts"
+    },
+    "sink": {
+      "type": "Lakehouse",
+      "connection": "lh_sales_core",
+      "schema": "crm_replication",
+      "table": "accounts_raw",
+      "format": "delta",
+      "writeMode": "append"
+    }
+  }
+}

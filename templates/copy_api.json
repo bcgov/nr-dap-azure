@@ -1,0 +1,20 @@
+{
+  "name": "pl_api_to_lakehouse_bronze",
+  "type": "Copy",
+  "properties": {
+    "source": {
+      "type": "RestApi",
+      "connection": "lc_api_marketing",
+      "endpoint": "https://api.example.com/customers",
+      "pagination": { "type": "token", "param": "nextToken" }
+    },
+    "sink": {
+      "type": "Lakehouse",
+      "connection": "lh_sales_core",
+      "schema": "mkt_replication",
+      "table": "customers_raw",
+      "format": "delta",
+      "writeMode": "append"
+    }
+  }
+}

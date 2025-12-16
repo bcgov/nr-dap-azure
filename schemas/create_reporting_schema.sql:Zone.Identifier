@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://claude.ai/chat/2ac2f418-b6a9-4247-83eb-57c6460e7450
+HostUrl=https://claude.ai/api/organizations/0ef4fe2d-1d6d-4044-bf96-7c655b089f92/conversations/2ac2f418-b6a9-4247-83eb-57c6460e7450/wiggle/download-file?path=%2Fmnt%2Fuser-data%2Foutputs%2Fcreate_reporting_schema.sql
