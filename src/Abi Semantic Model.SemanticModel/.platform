@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Abi Semantic Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0eb2030f-a639-b1b9-4b18-54da1fc9fa2b"
+  }
+}

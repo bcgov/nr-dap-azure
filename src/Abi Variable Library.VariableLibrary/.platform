@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "VariableLibrary",
+    "displayName": "Abi Variable Library"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "81e5f8db-8fcd-8bbc-48ec-646a3ad273b5"
+  }
+}

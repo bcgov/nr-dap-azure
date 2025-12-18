@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "CopyJob",
+    "displayName": "Abi Copy Job Oracle"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3414bd9e-5fa8-ada2-43cd-bde40cd4cbeb"
+  }
+}

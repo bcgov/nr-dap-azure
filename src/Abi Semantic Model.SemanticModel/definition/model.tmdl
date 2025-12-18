@@ -1,0 +1,19 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.146.7734.7 (Main)+d9b2b28c0d3e4400396ffa51394058e38eedec7e
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+ref table ElectricVehicleData
+
+ref cultureInfo en-US
+
