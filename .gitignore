@@ -1,0 +1,25 @@
+# Environment variables
+.env
+
+# Log files
+logs/*
+!logs/.gitkeep
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore Zone.Identifier files
+*:Zone.Identifier
