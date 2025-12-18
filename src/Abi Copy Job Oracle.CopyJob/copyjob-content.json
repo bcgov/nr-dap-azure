@@ -15,8 +15,14 @@
       "connectionSettings": {
         "type": "Lakehouse",
         "typeProperties": {
-          "workspaceId": "00000000-0000-0000-0000-000000000000",
-          "artifactId": "d51d0b9b-df61-a3a1-478f-9bde52ab6c3f",
+          "workspaceIdVariableLibrary": {
+            "variableName": "workspace_id",
+            "libraryName": "Abi Variable Library Test"
+          },
+          "artifactIdVariableLibrary": {
+            "variableName": "lakehouse_id",
+            "libraryName": "Abi Variable Library Test"
+          },
           "rootFolder": "Tables"
         },
         "externalReferences": {

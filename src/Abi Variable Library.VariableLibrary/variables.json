@@ -2,10 +2,22 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/variables/1.0.0/schema.json",
   "variables": [
     {
-      "name": "connection_name",
+      "name": "connection_id",
       "note": "",
       "type": "String",
-      "value": "example"
+      "value": "96dc0338-608e-4ee8-a8c9-463bf0c4d40e"
+    },
+    {
+      "name": "lakehouse_id",
+      "note": "",
+      "type": "String",
+      "value": "52ab6c3f-9bde-478f-a3a1-df61d51d0b9b"
+    },
+    {
+      "name": "workspace_id",
+      "note": "",
+      "type": "String",
+      "value": "aac81c75-c37a-4129-a1f4-f9b42c02453e"
     }
   ]
 }
