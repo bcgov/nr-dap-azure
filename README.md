@@ -1,6 +1,6 @@
-# Fabric Medallion QuickStart
+# Fabric Lakehouse Medallion QuickStart
 
-This QuickStart provides a ready-to-use implementation of the Medallion (Bronze–Silver–Gold) architecture in Microsoft Fabric, designed to help clients rapidly deploy a scalable data lakehouse solution.
+This QuickStart provides a ready-to-use implementation of the Medallion (Bronze–Silver–Gold) Lakehouse architecture in Microsoft Fabric, designed to help clients rapidly deploy a scalable data lakehouse solution.
 
 ## Quick Start
 

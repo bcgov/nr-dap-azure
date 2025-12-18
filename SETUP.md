@@ -39,8 +39,6 @@ This QuickStart implements a medallion lakehouse architecture with three zones:
 
 **Verify**: You should see the file at path `Files/raw/customers.csv` in your Lakehouse
 
-### Step 3: Create Database Schemas
-
 ### Step 3: Create Database Schemas in Lakehouse
 
 Schemas must be created in your Lakehouse before running notebooks. Create them manually using the Lakehouse UI:
