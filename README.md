@@ -6,12 +6,41 @@ This QuickStart provides a ready-to-use implementation of the Medallion (Bronze�
 
 **New to this project?** → Start with **[SETUP.md](SETUP.md)** for detailed step-by-step instructions to get up and running in Fabric.
 
+### Fabric Git Quickstart (connect → sync → run → disconnect)
+
+Use this 5‑minute path to pull the notebook into a new, empty workspace and import the training files.
+
+1. **Create** a new empty Fabric workspace.
+2. **Connect the workspace to GitHub**  
+   - **Workspace settings → Git integration**  
+   - Provider: GitHub  
+   - Repo: `bcgov/nr-dap-azure`  
+   - Branch: `fabric-lakehouse-medallion-quickstart`  
+   - Folder: `bootstrap`
+3. **Initial sync**: choose **Git → Workspace** (your workspace is empty).
+4. **Run the notebook** `bootstrap/01_import_files_root` → **Run all**  
+   - Creates/attaches Lakehouse **`lh_sales_core`**  
+   - Copies **text assets** from the branch root into **Lakehouse → Files → `quickstart`**  
+   - (Binary files are skipped by default; see SETUP for how to enable them.)
+5. **Disconnect Git**  
+   - **Workspace settings → Git integration → Disconnect**  
+   - Prevents accidental commits back to the repo; your items remain in the workspace.
+
+> **Tip:** If your organization restricts outbound traffic, allow `api.github.com` and `raw.githubusercontent.com` for the one‑time import.  
+> **Note:** Lakehouse data (Tables and Files) isn’t tracked in Git; the notebook places assets locally for each learner.
+
 ## Project Structure
 
 ```
 fabric-medallion-quickstart/
 ├── SETUP.md                          # 👈 START HERE - Detailed setup guide
 ├── README.md                         # This file - project overview
+├── .github                           # CODEOWNERS CODEOWNERS and any workflows
+├── bootstrap                         # Fabric‑committed notebook(s) + a lightweight README
+│   ├── 01_import_files_root.Notebook # Fabric representation of the notebook item
+│   │   ├── .platform                 # Fabric generated platform file
+│   │   └── notebook-contents.py      # source (cells + metadata)
+│   └── README.md                     # instructions (connect → sync → run → disconnect)
 ├── docs/                             # Architecture and design documentation
 │   ├── architecture.md               # Architecture decisions and patterns
 │   └── naming-conventions.md         # Naming standards for Fabric items
