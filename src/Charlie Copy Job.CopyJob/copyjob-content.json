@@ -15,14 +15,8 @@
       "connectionSettings": {
         "type": "Lakehouse",
         "typeProperties": {
-          "workspaceIdVariableLibrary": {
-            "variableName": "workspace_id",
-            "libraryName": "Abi Variable Library Test"
-          },
-          "artifactIdVariableLibrary": {
-            "variableName": "lakehouse_id",
-            "libraryName": "Abi Variable Library Test"
-          },
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "d51d0b9b-df61-a3a1-478f-9bde52ab6c3f",
           "rootFolder": "Tables"
         },
         "externalReferences": {
@@ -36,7 +30,7 @@
   },
   "activities": [
     {
-      "id": "11e2d09c-8714-446c-8bd0-205a182bf7aa",
+      "id": "9d3b4274-7680-4a94-98eb-fc6845476983",
       "properties": {
         "source": {
           "datasetSettings": {
@@ -64,7 +58,7 @@
       }
     },
     {
-      "id": "913542f3-8961-41d3-a8f7-52b7beacaefb",
+      "id": "2fd9249d-58eb-4083-acb0-aa298576e3f6",
       "properties": {
         "source": {
           "datasetSettings": {
