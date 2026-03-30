@@ -73,17 +73,18 @@ This QuickStart implements a three-tier medallion architecture:
 
 - **Bronze (Replication)** → `<source>_replication` schema
   - Raw data landing zone
-  - Append-only writes
+  - Reflects exactly what is in the source system
   - Schema-on-read
   - Example: `erp_replication.customers_raw`
 
-- **Silver (Reporting)** → `<source>_reporting` schema
-  - Cleansed and conformed data
-  - Overwrite mode (full refresh)
-  - Type conversions, deduplication, standardization
-  - Example: `erp_reporting.customers_curated`
+- **Silver (Reporting)** → `<source>_staging` schema and/or `<source>_history` schema
+  - Cleansed, validated, and conformed data
+  - Transformation may include type conversions, deduplication, standardization
+  - Collecting table history would also be part of Silver layer
+  - Example: `erp_staging.customers_curated` or `erp_history.customers_monthly`
 
 - **Gold (Marts)** → `<source>_reporting` schema
+  - Consumable data layer
   - Business-ready aggregations and metrics
   - Optimized for analytics and reporting
   - Example: `erp_reporting.customer_country_ageband_mart`
